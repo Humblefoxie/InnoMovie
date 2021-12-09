@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:swipedeck="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/relLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <!--creating a swipe frame layout for providing a swipe action-->
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="197dp"
+            android:layout_height="153dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="500dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="578dp"
+            swipedeck:srcCompat="@mipmap/pickafilmlogo_foreground" />
+
+        <com.daprlabs.cardstack.SwipeFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.daprlabs.cardstack.SwipeDeck
+                android:id="@+id/swipe_deck"
+                android:layout_width="match_parent"
+                android:layout_height="480dp"
+                android:padding="20dp"
+                swipedeck:card_spacing="5dp"
+                swipedeck:max_visible="5"
+                swipedeck:render_above="true"
+                swipedeck:rotation_degrees="20">
+
+            </com.daprlabs.cardstack.SwipeDeck>
+
+        </com.daprlabs.cardstack.SwipeFrameLayout>
+
+    </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_drawer_menu"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true" />
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
