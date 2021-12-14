@@ -2,7 +2,6 @@ package com.example.pickafilm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +11,7 @@ import android.widget.Toast;
 public class Preferences extends AppCompatActivity {
 
 
-    Switch oldMovies;
+    Switch newMovies;
     Switch goodRating;
     Switch actionMovies;
     Switch scifiMovies;
@@ -25,16 +24,17 @@ public class Preferences extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preferences);
 
-        oldMovies = (Switch) findViewById(R.id.oldMovies);
+        // Initializing switches in 'preferences' view
+        newMovies = (Switch) findViewById(R.id.newMovies);
         goodRating = (Switch) findViewById(R.id.goodRating);
         actionMovies = (Switch) findViewById(R.id.actionMovies);
         scifiMovies = (Switch) findViewById(R.id.scifiMovies);
         horrorMovies = (Switch) findViewById(R.id.horrorMovies);
         adventureMovies = (Switch) findViewById(R.id.adventureMovies);
 
-
+        // Setting their respective checked/unchecked status
         if(MainActivity.preferenceList.size()!= 0) {
-            oldMovies.setChecked(MainActivity.preferenceList.get(0));
+            newMovies.setChecked(MainActivity.preferenceList.get(0));
             goodRating.setChecked(MainActivity.preferenceList.get(1));
             actionMovies.setChecked(MainActivity.preferenceList.get(2));
             scifiMovies.setChecked(MainActivity.preferenceList.get(3));
@@ -43,9 +43,11 @@ public class Preferences extends AppCompatActivity {
         }
     }
 
+    // When new preferences are selected, the 'preference' list is rebuild with
+    // regards to what switched are checked
     public void submitPreferences(View v){
         MainActivity.preferenceList.clear();
-        MainActivity.preferenceList.add(oldMovies.isChecked());
+        MainActivity.preferenceList.add(newMovies.isChecked());
         MainActivity.preferenceList.add(goodRating.isChecked());
         MainActivity.preferenceList.add(actionMovies.isChecked());
         MainActivity.preferenceList.add(scifiMovies.isChecked());

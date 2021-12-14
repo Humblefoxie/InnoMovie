@@ -8,7 +8,18 @@ public class MovieContainer {
     private String desc;
     private String genre;
     private String runtime;
-    private int imgId;
+    private int imgId; // Later to be implemented as container for movieposter.
+
+    // constructor.
+    public MovieContainer(String name, String year,  int rating, String desc, String genre, String runtime, int imgId) {
+        this.name = name;
+        this.year = year;
+        this.rating = rating;
+        this.desc = desc;
+        this.genre = genre;
+        this.runtime = runtime;
+        this.imgId = imgId;
+    }
 
     public String getName() {
         return name;
@@ -66,14 +77,5 @@ public class MovieContainer {
         this.imgId = imgId;
     }
 
-    // constructor.
-    public MovieContainer(String name, String year,  int rating, String desc, String genre, String runtime, int imgId) {
-        this.name = name;
-        this.year = year;
-        this.rating = rating;
-        this.desc = desc;
-        this.genre = genre;
-        this.runtime = runtime;
-        this.imgId = imgId;
-    }
+
 }

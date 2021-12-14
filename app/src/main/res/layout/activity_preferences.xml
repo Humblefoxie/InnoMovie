@@ -25,7 +25,7 @@
             swipedeck:layout_constraintTop_toTopOf="parent" />
 
         <Switch
-            android:id="@+id/oldMovies"
+            android:id="@+id/newMovies"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_marginTop="11dp"
@@ -42,7 +42,7 @@
             android:layout_marginEnd="150dp"
             android:text="Above 4 rating"
             swipedeck:layout_constraintEnd_toEndOf="parent"
-            swipedeck:layout_constraintTop_toBottomOf="@+id/oldMovies" />
+            swipedeck:layout_constraintTop_toBottomOf="@+id/newMovies" />
 
         <Switch
             android:id="@+id/actionMovies"
@@ -88,13 +88,14 @@
             android:id="@+id/submitPref"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="240dp"
-            android:layout_marginBottom="75dp"
+            android:layout_marginTop="50dp"
             android:onClick="submitPreferences"
             android:text="Submit"
             swipedeck:layout_constraintBottom_toBottomOf="parent"
             swipedeck:layout_constraintEnd_toEndOf="parent"
+            swipedeck:layout_constraintHorizontal_bias="0.498"
             swipedeck:layout_constraintStart_toStartOf="parent"
-            swipedeck:layout_constraintTop_toBottomOf="@+id/adventureMovies" />
+            swipedeck:layout_constraintTop_toBottomOf="@+id/adventureMovies"
+            swipedeck:layout_constraintVertical_bias="0.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </RelativeLayout>
